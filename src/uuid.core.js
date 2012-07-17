@@ -17,13 +17,9 @@ function UUID() {}
 UUID.generate = function() {
   var rand = UUID._gri, hex = UUID._ha;
   return  hex(rand(32), 8)          // time_low
-        + "-"
         + hex(rand(16), 4)          // time_mid
-        + "-"
         + hex(0x4000 | rand(12), 4) // time_hi_and_version
-        + "-"
         + hex(0x8000 | rand(14), 4) // clock_seq_hi_and_reserved clock_seq_low
-        + "-"
         + hex(rand(48), 12);        // node
 };
 
